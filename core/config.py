@@ -8,13 +8,20 @@ PALAVRAS_CHAVE_C = {
 
 PADROES_TOKEN = [
     ('COMENTARIO', r'//.*|/\*[\s\S]*?\*/'),
-    ('STRING', r'\"([^\\\"]|\\.)*\"'),
-    ('CHAR', r"\'([^\\\']|\\.)*\'"),
-    ('NUMERO', r'\b\d+\.\d*\b|\b\d+\b|\b0x[0-9a-fA-F]+\b'),
-    ('OPERADOR', r'[+\-*/%=!<>&|^~]{1,3}'),
-    ('DELIMITADOR', r'[(){}\[\],;.:]'),
+    ('PREPROCESSADOR', r'#\s*\w+'),  
+    ('STRING', r'L?\"([^\\\"]|\\.)*\"'), 
+    ('CHAR', r"L?\'([^\\\']|\\.)*\'"),
+    
+    
+    ('NUMERO_HEX', r'\b0x[0-9a-fA-F]+[uUlL]*\b'),
+    ('NUMERO_FLOAT', r'\b\d*\.\d+([eE][-+]?\d+)?[fFlL]?\b|\b\d+[eE][-+]?\d+[fFlL]?\b'),
+    ('NUMERO_INT', r'\b\d+[uUlL]*\b'),
+    
+    
+    ('OPERADOR', r'>>=|<<=|\.\.\.|->|\+\+|--|&&|\|\||<=|>=|==|!=|\+=|-=|\*=|/=|%=|&=|\^=|\|=|[+\-*/%=!<>&|^~?]'),
+    
+    ('DELIMITADOR', r'[(){}\[\],;.:]'), 
     ('IDENTIFICADOR', r'[a-zA-Z_]\w*'),
-    ('PREPROCESSADOR', r'#\s*\w+'),
     ('ESPACO', r'\s+')
 ]
 

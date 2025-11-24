@@ -119,36 +119,3 @@ class ComponentesInterface:
             else:
                 st.warning("⚠️ Nenhum símbolo identificado")
     
-    @staticmethod
-    def exibir_explicacao():
-        """Explica o funcionamento do código"""
-        st.markdown("---")
-        st.subheader("🔍 Explicação do Código")
-        
-        with st.expander("📖 Como o Analisador Léxico Funciona"):
-            st.markdown("""
-            ### Funcionamento do Analisador Léxico:
-            
-            **1. Definição dos Padrões (Regex):**
-            - Usamos expressões regulares para identificar cada tipo de token
-            - Exemplo: `r'[a-zA-Z_]\\w*'` para identificadores
-            
-            **2. Processamento:**
-            - O código é percorrido caractere por caractere
-            - Para cada posição, testamos todos os padrões regex
-            - Quando encontramos um match, classificamos o token
-            
-            **3. Tabela de Símbolos:**
-            - Armazena apenas identificadores únicos
-            - Mantém a ordem de primeira ocorrência
-            - Ignora palavras-chave e outros tokens
-            
-            **4. Tratamento de Erros:**
-            - Caracteres não reconhecidos são marcados como ERRO
-            - O processamento continua após erros
-            
-            **5. Arquitetura Modular:**
-            - `core/`: Lógica do analisador léxico
-            - `ui/`: Interface do usuário
-            - Separação clara de responsabilidades
-            """)

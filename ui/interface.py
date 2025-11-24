@@ -30,11 +30,7 @@ class InterfaceUsuario:
             # Executar análise se houver código
             if codigo_fonte and st.button("🚀 Analisar Código", type="primary"):
                 self._executar_analise(codigo_fonte)
-            
-            # Exibir informações adicionais
-            ComponentesInterface.exibir_explicacao()
-            st.info("💡 **Dica:** Use o código exemplo para testar ou faça upload de seu próprio arquivo .c")
-            
+                     
         except Exception as e:
             st.error(f"❌ Erro na aplicação: {str(e)}")
             st.info("🔄 Recarregue a página e tente novamente")
